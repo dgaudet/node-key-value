@@ -27,6 +27,18 @@ class FileKeyValueRepository {
   getAll(){
     return this.list;
   }
+
+  remove(key){
+    var matchingItem = this.get(key);
+
+    if (matchingItem != null) {
+      var index = this.list.indexOf(matchingItem);
+
+      if (index > -1) {
+        this.list.splice(index, 1);
+      }
+    }
+  }
 }
 
 module.exports = FileKeyValueRepository

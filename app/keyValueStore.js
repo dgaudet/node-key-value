@@ -3,7 +3,7 @@ class KeyValueStore {
     this.repo = repository;
   }
 
-  add(keyValue){    
+  add(keyValue){
     this.repo.add(keyValue);
   }
 
@@ -13,6 +13,10 @@ class KeyValueStore {
 
   getAll(){
     return this.repo.getAll();
+  }
+
+  remove(key){
+    this.repo.remove(key);
   }
 }
 
