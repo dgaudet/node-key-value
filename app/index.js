@@ -9,13 +9,16 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-console.log('You can continue to enter commands. ctrl+c will quit the application.')
+console.log('You can continue to enter commands. \'exit\' or ctrl+c will quit the application.')
 
 var fileRepo = new FileRepo('');
 var keyValueStore = new KeyValueStore(fileRepo);
 var storeController = new StoreController(keyValueStore);
 
 rl.on('line', (input) => {
-  console.log(`Received: ${input}`);
-  storeController.readLine(input);
+  if (input.toLowerCase() === 'exit') {
+    rl.close();
+  } else {
+    storeController.readLine(input);
+  }
 });

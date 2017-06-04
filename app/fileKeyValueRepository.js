@@ -1,4 +1,4 @@
-class FileKeyValueRepository {
+class MemoryKeyValueRepository {
   constructor(fileName){
     this.fileName = fileName;
     this.list = new Array();
@@ -41,4 +41,4 @@ class FileKeyValueRepository {
   }
 }
 
-module.exports = FileKeyValueRepository
+module.exports = MemoryKeyValueRepository
