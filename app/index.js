@@ -1,4 +1,3 @@
-const KeyValue = require('./keyValue')
 const KeyValueStore = require('./keyValueStore')
 const FileRepo = require('./fileKeyValueRepository')
 const StoreController = require('./storeController')
@@ -20,30 +19,3 @@ rl.on('line', (input) => {
   console.log(`Received: ${input}`);
   storeController.readLine(input);
 });
-
-// rl.question('Please enter a command: ', (command) => {
-//
-//   var keyVal1 = new KeyValue('key1', 'value1');
-//   keyValueStore.add(keyVal1);
-//   keyValueStore.add(new KeyValue('key2', 'value2'));
-//   keyValueStore.add(new KeyValue('key3', 'value3'));
-//   keyValueStore.add(new KeyValue('key1', 'value4'));
-//   var allKeyVals = keyValueStore.getAll();
-//
-//   console.log(`Thank you for your input: ${command}`);
-//   allKeyVals.forEach(function(keyVal){
-//       console.log(JSON.stringify(keyVal));
-//   });
-//
-//   var retrieved = keyValueStore.get('key1');
-//   console.log(JSON.stringify(retrieved));
-//   keyValueStore.remove('key1');
-//
-//   console.log('test');
-//   allKeyVals = keyValueStore.getAll();
-//   allKeyVals.forEach(function(keyVal){
-//       console.log(JSON.stringify(keyVal));
-//   });
-//
-//   //rl.close();
-// });
