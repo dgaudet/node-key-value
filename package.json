@@ -1,0 +1,20 @@
+{
+  "name": "node-key-value",
+  "version": "1.0.0",
+  "description": "Key Value collection setting and getting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgaudet/node-key-value.git"
+  },
+  "author": "dgaudet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgaudet/node-key-value/issues"
+  },
+  "homepage": "https://github.com/dgaudet/node-key-value#readme"
+}
