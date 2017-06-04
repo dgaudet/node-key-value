@@ -3,9 +3,12 @@ class KeyValueStore {
     this.repo = repository;
   }
 
-  add(keyValue){
-    // todo: check if the key already exsists to do an update
+  add(keyValue){    
     this.repo.add(keyValue);
+  }
+
+  get(key){
+    return this.repo.get(key);
   }
 
   getAll(){

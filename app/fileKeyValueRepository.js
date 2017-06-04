@@ -5,7 +5,23 @@ class FileKeyValueRepository {
   }
 
   add(keyValue){
-    this.list.push(keyValue);
+    var existingKeyVal = this.get(keyValue.key);
+    if (existingKeyVal != null) {
+      existingKeyVal.value = keyValue.value;
+    } else {
+      this.list.push(keyValue);
+    }
+  }
+
+  get(key){
+    var result = this.list.filter(function(keyValue){
+      return keyValue.key === key;
+    });
+
+    if (result.length > 0) {
+      return result[0];
+    }
+    return null;
   }
 
   getAll(){
