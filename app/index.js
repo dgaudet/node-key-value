@@ -1,4 +1,7 @@
 const KeyValue = require('./keyValue')
+const KeyValueStore = require('./keyValueStore')
+const FileRepo = require('./fileKeyValueRepository')
+
 const readline = require('readline')
 
 const rl = readline.createInterface({
@@ -6,11 +9,21 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+var fileRepo = new FileRepo('');
+var keyValueStore = new KeyValueStore(fileRepo);
+
 rl.question('Please enter a command: ', (command) => {
 
-  var keyVal1 = new KeyValue('key1', 'value1')
+  var keyVal1 = new KeyValue('key1', 'value1');
+  keyValueStore.add(keyVal1);
+  keyValueStore.add(new KeyValue('key2', 'value2'));
+  var allKeyVals = keyValueStore.getAll();
+
   console.log(`Thank you for your input: ${command}`);
-  console.log('key val test: ' + JSON.stringify(keyVal1));
+  allKeyVals.forEach(function(keyVal){
+      console.log(JSON.stringify(keyVal));
+  });
+
 
   rl.close();
 });
