@@ -36,6 +36,7 @@ class StoreController {
     if(commands.length > 3){
       var keyValue = new KeyValue(commands[2], commands[3]);
       this.store.add(keyValue);
+      console.log('added');
     } else {
       console.log(this.defaultErrorMessage);
     }

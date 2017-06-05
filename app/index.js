@@ -1,5 +1,5 @@
 const KeyValueStore = require('./keyValueStore')
-const FileRepo = require('./fileKeyValueRepository')
+const MemoryRepo = require('./memoryKeyValueRepository')
 const StoreController = require('./storeController')
 
 const readline = require('readline')
@@ -11,8 +11,8 @@ const rl = readline.createInterface({
 
 console.log('You can continue to enter commands. \'exit\' or ctrl+c will quit the application.')
 
-var fileRepo = new FileRepo('');
-var keyValueStore = new KeyValueStore(fileRepo);
+var memoryRepo = new MemoryRepo('');
+var keyValueStore = new KeyValueStore(memoryRepo);
 var storeController = new StoreController(keyValueStore);
 
 rl.on('line', (input) => {
