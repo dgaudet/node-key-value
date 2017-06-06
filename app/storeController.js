@@ -7,28 +7,32 @@ class StoreController {
   }
 
   readLine(data){
-    if(data != null && data.length > 0){
-      var commands = data.split(' ');
-      if (commands.length < 2 || commands[0].toLowerCase() !== 'store') {
-        console.log(this.defaultErrorMessage);
-      } else {
-        switch (commands[1].toLowerCase()){
-          case 'add':
-            this.handleAdd(commands);
-            break;
-          case 'list':
-            this.handleList();
-            break;
-          case 'get':
-            this.handleGet(commands);
-            break;
-          case 'remove':
-            this.handleRemove(commands);
-            break;
-          default:
-            console.log(this.defaultErrorMessage);
+    try {
+      if(data != null && data.length > 0){
+        var commands = data.split(' ');
+        if (commands.length < 2 || commands[0].toLowerCase() !== 'store') {
+          console.log(this.defaultErrorMessage);
+        } else {
+          switch (commands[1].toLowerCase()){
+            case 'add':
+              this.handleAdd(commands);
+              break;
+            case 'list':
+              this.handleList();
+              break;
+            case 'get':
+              this.handleGet(commands);
+              break;
+            case 'remove':
+              this.handleRemove(commands);
+              break;
+            default:
+              console.log(this.defaultErrorMessage);
+          }
         }
       }
+    } catch (e){
+      console.log('Sorry something went terribly wrong.\nPlease try again or contact support at dean@deangaudet.com.')
     }
   }
 

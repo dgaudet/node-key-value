@@ -24,7 +24,9 @@ class AppInfo {
 
   appInstructions(){
     console.log('Welcome to Key Value Store');
-    console.log('Please note this is an in memory store.\nYou will loose your changes upon app exit.');
+    console.log('Please note this is an in memory store.\nAs it is a very simple example.');
+    console.log('You will loose your changes upon app exit.');
+    console.log('- However it would be quite easy to replace\nthe Memory repo with a database or other storage mechanism');
     console.log('\r');
     console.log('Commands: ');
     console.log('store add key value');
