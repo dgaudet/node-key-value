@@ -1,15 +1,13 @@
 const KeyValueStore = require('./keyValueStore')
 const MemoryRepo = require('./memoryKeyValueRepository')
 const StoreController = require('./storeController')
+const Readline = require('readline')
+const AppInfo = require('./appInfo')
 
-const readline = require('readline')
-
-const rl = readline.createInterface({
+const rl = Readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-
-console.log('You can continue to enter commands. \'exit\' or ctrl+c will quit the application.')
 
 var memoryRepo = new MemoryRepo('');
 var keyValueStore = new KeyValueStore(memoryRepo);
@@ -22,3 +20,6 @@ rl.on('line', (input) => {
     storeController.readLine(input);
   }
 });
+
+var appInfo =  new AppInfo();
+appInfo.displayAppInfo();
